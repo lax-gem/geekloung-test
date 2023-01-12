@@ -1,8 +1,9 @@
-<div class="center jumbotron">
-  <h1>Sample App</h1>
-  <h2>
-    このページは、<a href="https://geek-lounge.com/">GeekLounge</a>の学習チュートリアルで作られました。
-  </h2>
-
-  <%= link_to "新規登録はこちら", '#', class: "btn btn-lg btn-primary" %>
+<% @users.each do |user| %>
+<div style="width: 18rem;">
+  <div class="d-flex align-items-center justify-content-center p-3">
+    <%= gravatar_for user %>
+  </div>
+    <h5><%= user.name %></h5>
+    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 </div>
+<% end %>
