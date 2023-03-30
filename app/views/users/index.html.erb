@@ -1,12 +1,16 @@
 <h1>ユーザーリスト</h1>
+<div class="row row-cols-3">
 <% @users.each do |user| %>
-<div style= "width: 18rem;">
-  <%= link_to user_path(user) do %>
-  <div class="d-flex align-items-center justify-content-center p-3">
-    <%= gravatar_for user %>
-  </div>
-    <h5><%= user.name %></h5>
-    <p><%= user.introduction %></p>
+<div class="col pb-3">
+  <div class="card m-auto" style= "width: 18rem;">
+    <%= link_to user_path(user) do %>
+    <div class="d-flex align-items-center justify-content-center p-3">
+      <%= gravatar_for user %>
+    </div>
+      <h5 class="card-title"><%= user.name %></h5>
+      <p class="card-text"><%= user.self_introduction %></p>
     <% end %>
+  </div>
 </div>
 <% end %>
+</div>
