@@ -1,3 +1,4 @@
+<% provide(:title, 'Sign up') %>
 <h1>新規登録</h1>
 <div class="row">
   <div class="col-md-6 offset-md-3">
@@ -8,6 +9,12 @@
 
       <%= f.label :email, "メールアドレス" %>
       <%= f.email_field :email %>
+      
+      <%= f.label :hobby, "趣味" %>
+      <%= f.text_field :hobby %>
+      
+       <%= f.label :introduction, "自己紹介" %>
+       <%= f.text_area :introduction %>
 
       <%= f.submit "アカウントを作成する", class: "btn btn-primary" %>
     <% end %>

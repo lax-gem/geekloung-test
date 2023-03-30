@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
 
   def index
-    @user = User.first
+    @users = User.all
   end
 
   def new
+    @user = User.new
   end
 
   def show
-    @user = User.first
+    @user = User.find(params[:id])
   end
 
   def create
@@ -24,6 +25,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email, :hobby, :introduction)
     end
 end

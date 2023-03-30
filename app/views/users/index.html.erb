@@ -1,8 +1,12 @@
 <h1>ユーザーリスト</h1>
-<div style="width: 18rem;">
+<% @users.each do |user| %>
+<div style= "width: 18rem;">
+  <%= link_to user_path(user) do %>
   <div class="d-flex align-items-center justify-content-center p-3">
-    <%= gravatar_for @user %>
+    <%= gravatar_for user %>
   </div>
-    <h5><%= @user.name %></h5>
-    <p>BootstrapのCardコンポーネントを使って、すべてのユーザーを横3列で表示してください</p>
+    <h5><%= user.name %></h5>
+    <p><%= user.introduction %></p>
+    <% end %>
 </div>
+<% end %>
